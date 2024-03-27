@@ -1,11 +1,11 @@
-import {View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native'; // Import NavigationContainer
 import Home from './screens/Home';
 
 export default function App() {
   return (
-    <View>
-      <Home />
-    </View>
+    <NavigationContainer> 
+      <Home/>
+    </NavigationContainer>
   );
 }
-

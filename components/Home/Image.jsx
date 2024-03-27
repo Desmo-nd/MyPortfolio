@@ -23,7 +23,7 @@ export default ImageComponent;
 const styles = StyleSheet.create({
     imageCont:{
         height: '70%',
-        width: '48%',
+        width: '35%',
         backgroundColor: '#ffffff',
         position: 'absolute',
         zIndex: 1,

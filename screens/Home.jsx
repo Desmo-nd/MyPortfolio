@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SIZES } from '../constants';
 import Image from '../components/Home/Image';
+import Content from '../components/Home/Content';
+// import RightTabNavigation from '../navigation/RightTabNavigation';
+
 const Home = () => {
   return (
     <View style={styles.heroSlider}>
@@ -9,13 +12,10 @@ const Home = () => {
       </View>
       <View style={styles.leftslide}>
         <Image />
-        <View style={styles.content}>
-            <Text style={styles.title}>After decades of research, the scientific evidence is clear.</Text>
-            <Text style={styles.subhead}>Being grateful is good for you and your loved ones.</Text>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Play Video</Text>
-            </TouchableOpacity>
+        <View style={styles.contentcont}>
+            <Content />
         </View>
+        {/* <RightTabNavigation /> */}
       </View>
     </View>
   );
@@ -32,10 +32,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     
   },
-  leftslide:{
-    justifyContent: 'center',
-    
-  },
+
   slide: {
     backgroundColor: '#35424E',
     flexDirection: 'column',
@@ -44,34 +41,19 @@ const styles = StyleSheet.create({
     height: '100%',
     clipPath: 'polygon(0 0, 100% 0, 70% 100%, 0 100%)',
   },
-  content: {
+  leftslide:{
+    justifyContent: 'center',
+    
+  },
+  contentcont:{
     padding: 0,
-    paddingHorizontal: 40,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#ffffff',
-  },
-  subhead: {
-    fontSize: 16,
-    color: '#ffffff',
-  },
-  button: {
-    backgroundColor: '#EF5A56',
-    color: '#ffffff',
-    textAlign: 'center',
-    textDecorationLine: 'none',
-    textTransform: 'uppercase',
-    marginTop: 30,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    width: 200,
-  },
-  buttonText: {
-    color: '#ffffff',
-    textAlign: 'center',
-  },
+    left: 150,
+    height:"90%",
+    height: "100%",
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });
 
 export default Home;
