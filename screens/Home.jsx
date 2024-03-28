@@ -4,6 +4,8 @@ import { SIZES } from '../constants';
 import Image from '../components/Home/Image';
 import Content from '../components/Home/Content';
 // import RightTabNavigation from '../navigation/RightTabNavigation';
+import CustomNavigationBar from '../components/CustomNavigationBar';
+
 
 const Home = () => {
   return (
@@ -15,15 +17,16 @@ const Home = () => {
         <View style={styles.contentcont}>
             <Content />
         </View>
-        {/* <RightTabNavigation /> */}
       </View>
+      <CustomNavigationBar />
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   heroSlider: {
-    backgroundColor: '#73BE64',
+    backgroundColor: '#35424E',
     color: '#ffffff',
     fontFamily: 'Helvetica Neueu, Helvetica, sans-serif',
     width: SIZES.width,
@@ -34,7 +37,7 @@ const styles = StyleSheet.create({
   },
 
   slide: {
-    backgroundColor: '#35424E',
+    backgroundColor: '#73BE64',
     flexDirection: 'column',
     justifyContent: 'center',
     width: "25%",
@@ -49,7 +52,6 @@ const styles = StyleSheet.create({
     padding: 0,
     left: 150,
     height:"90%",
-    height: "100%",
     alignContent: 'center',
     justifyContent: 'center',
     alignItems: 'center',

@@ -1,8 +1,9 @@
 import React from "react";
 import { Text, StyleSheet, View, TouchableOpacity, Image, Button, ScrollView } from "react-native";
-import { SIZES } from "../../constants";
+import { useNavigation } from '@react-navigation/native';
 
 const Content = () => {
+    const navigation = useNavigation();
     return (
     
     <View style={styles.Container}>
@@ -15,7 +16,7 @@ const Content = () => {
                 Experience In Designing  And Building Resposive Web Apps 
                 And Android Apps.
             </Text>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity  onPress={() => navigation.navigate('AboutMe')} style={styles.button}>
                 <Text style={styles.buttonText}>MORE ABOUT ME</Text>
             </TouchableOpacity>
         </View>
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     content: {
         padding: 0,
         paddingHorizontal: 40,
-        width: "72%",
+        width: "55%",
     },
     title: {
         fontSize: 24,
