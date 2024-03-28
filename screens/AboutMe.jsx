@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import CustomNavigationBar from '../components/CustomNavigationBar';
+
 
 const AboutMe = () => {
   return (
@@ -8,6 +10,8 @@ const AboutMe = () => {
       <Text style={styles.description}>
         I am a React Native developer passionate about creating innovative mobile applications.
       </Text>
+      <CustomNavigationBar />
+
     </View>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { SIZES } from '../constants';
+import { COLORS, SIZES } from '../constants';
 import Image from '../components/Home/Image';
 import Content from '../components/Home/Content';
 // import RightTabNavigation from '../navigation/RightTabNavigation';
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
 
   slide: {
-    backgroundColor: '#73BE64',
+    backgroundColor: COLORS.primary,
     flexDirection: 'column',
     justifyContent: 'center',
     width: "25%",

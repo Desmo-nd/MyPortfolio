@@ -1,62 +1,75 @@
-import React from "react";
-import { Text, StyleSheet, View, TouchableOpacity, Image, Button, ScrollView } from "react-native";
+import React, { useState } from 'react';
+import { Text, View, TouchableOpacity, Modal, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import styles from './content.styles'
+import { COLORS } from '../../constants';
+import DownloadCv from './DownloadCV';
 
 const Content = () => {
-    const navigation = useNavigation();
-    return (
-    
-    <View style={styles.Container}>
-        <View style={styles.content}>
-            <Text style={styles.title}>I'm Desmond Murangiri</Text>
-            <Text style={styles.title}>I'm a Software Engineer</Text>
+  const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
 
-            <Text style={styles.subhead}>
-                Hi, I'm a Fullstack  Devloperwith More Than Two Years Of 
-                Experience In Designing  And Building Resposive Web Apps 
-                And Android Apps.
-            </Text>
-            <TouchableOpacity  onPress={() => navigation.navigate('AboutMe')} style={styles.button}>
-                <Text style={styles.buttonText}>MORE ABOUT ME</Text>
-            </TouchableOpacity>
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.title}>I'm Desmond Murangiri</Text>
+        <Text style={styles.title}>I'm a Software Engineer</Text>
+
+        <Text style={styles.subhead}>
+          Hi, I'm a Fullstack Developer with More Than Two Years Of 
+          Experience In Designing And Building Responsive Web Apps 
+          And Android Apps.
+        </Text>
+        <TouchableOpacity onPress={openModal} style={styles.button}>
+          <Text style={styles.buttonText}>MORE ABOUT ME</Text>
+        </TouchableOpacity>
+      </View>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+          <Text style={styles.modalHeader}>ABOUT<Text style={{color:COLORS.primary}}>ME</Text></Text>
+            <Text style={styles.modalSubHeader}>PERSONAL INFO</Text>
+            <View style={styles.infoCont}>
+                <View style={styles.left}>
+                    <Text style={styles.modalText}>First Name: <Text style={styles.modalAnswer}>Desmond</Text></Text>
+                    <Text style={styles.modalText}>Age: <Text style={styles.modalAnswer}>23</Text></Text>
+                    <Text style={styles.modalText}>Phone: <Text style={styles.modalAnswer}>+254 740 524 75</Text></Text>
+                    <Text style={styles.modalText}>GitHub: <Text style={styles.modalAnswer}>Desmo-nd</Text></Text>
+
+                </View>
+                <View style={styles.right}>
+                    <Text style={styles.modalText}>Last Name: <Text style={styles.modalAnswer}>Mwirigi</Text></Text>
+                    <Text style={styles.modalText}>Country: <Text style={styles.modalAnswer}>Kenya</Text></Text>
+                    <Text style={styles.modalText}>Email: <Text style={styles.modalAnswer}>mwirgdesmon@gmail.com</Text></Text>
+                    <Text style={styles.modalText}>LinkedIn: <Text style={styles.modalAnswer}>DesmondMwirigi</Text></Text>
+
+                </View>
+            </View>
+            <DownloadCv/>
+            <Text style={styles.modalText}>PERSONAL INFO</Text>
+
+            {/* Add more content as needed */}
+            <Pressable onPress={closeModal} style={styles.closeButton}>
+              <Text style={styles.closeButtonText}>Close</Text>
+            </Pressable>
+          </View>
         </View>
-  </View>
+      </Modal>
+    </View>
   );
 };
-
 export default Content;
-
-const styles = StyleSheet.create({
-    Container:{
-        width:"100%",
-    },
-    content: {
-        padding: 0,
-        paddingHorizontal: 40,
-        width: "55%",
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#ffffff',
-    },
-    subhead: {
-        fontSize: 16,
-        color: '#ffffff',
-    },
-    button: {
-        backgroundColor: '#EF5A56',
-        color: '#ffffff',
-        textAlign: 'center',
-        textDecorationLine: 'none',
-        textTransform: 'uppercase',
-        marginTop: 30,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        width: 200,
-    },
-    buttonText: {
-        color: '#ffffff',
-        textAlign: 'center',
-    },
-});
