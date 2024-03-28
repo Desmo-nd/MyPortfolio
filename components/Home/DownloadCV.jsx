@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Linking } from 'react-native';
+import { COLORS } from '../../constants';
 
 const DownloadCVButton = () => {
   const handleDownloadCV = () => {
@@ -25,14 +26,18 @@ const DownloadCVButton = () => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     marginTop: 20,
+    width: 127,
+    height: 40,
+    alignSelf: 'center',
   },
   button: {
-    backgroundColor: '#007bff',
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderRadius: 20,
+    borderColor:COLORS.primary,
+    borderWidth: 1,
+
   },
   buttonText: {
     color: '#ffffff',

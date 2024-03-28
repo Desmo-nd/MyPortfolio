@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { COLORS } from '../constants';
 
 const CustomNavigationBar = () => {
   const navigation = useNavigation();
@@ -15,26 +16,26 @@ const CustomNavigationBar = () => {
   return (
     <View style={[styles.container, lightMode ? styles.lightMode : styles.nightMode]}>      
       <TouchableOpacity oonPress={toggleMode} style={styles.iconContainer}>
-        <Ionicons name="moon" size={24} color="black"  />
+        <Ionicons name="moon" size={24} color="white"  />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.iconContainer}>
-        <Ionicons name="home" size={24} color="black" />
+        <Ionicons name="home" size={24} color="white" />
         {/* {showText && <Text style={styles.iconText}>Toggle Mode</Text>} */}
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('AboutMe')} style={styles.iconContainer}>
-        <Ionicons name="person" size={24} color="black" />
+        <Ionicons name="person" size={24} color="white" />
         {/* <Text style={styles.iconText}>About Me</Text> */}
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('AboutMe')} style={styles.iconContainer}>
-        <Ionicons name="school" size={24} color="black" />
+        <Ionicons name="school" size={24} color="white" />
         {/* <Text style={styles.iconText}>About Me</Text> */}
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('AboutMe')} style={styles.iconContainer}>
-        <Ionicons style={styles.icons} name="image" size={24} color="black" />
+        <Ionicons style={styles.icons} name="image" size={24} color="white" />
         {/* <Text style={styles.iconText}>About Me</Text> */}
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('AboutMe')} style={styles.iconContainer}>
-        <Ionicons name="send" size={24} color="black" />
+        <Ionicons name="send" size={24} color="white" />
         {/* <Text style={styles.iconText}>About Me</Text> */}
       </TouchableOpacity>
     </View>
@@ -45,10 +46,10 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     top: "15%",
-    right: 50,
+    right: 20,
     width: 70,
     height: '70%', 
-    backgroundColor: '#ffffff',
+    backgroundColor: COLORS.primary,
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -68,10 +69,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   lightMode: {
-    backgroundColor: '#fff', 
+    backgroundColor: COLORS.primary,
   },
   nightMode: {
-    backgroundColor: '#000', 
+    backgroundColor: COLORS.primary,
   },
 });
 

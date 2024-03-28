@@ -23,7 +23,7 @@ export default ImageComponent;
 const styles = StyleSheet.create({
     imageCont:{
         height: '70%',
-        width: '35%',
+        width: '25%',
         backgroundColor: '#ffffff',
         position: 'absolute',
         zIndex: 1,
@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
         borderRadius: 30,
       },
     container: {
+        height: '70%',
+        width: '100%%',
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
