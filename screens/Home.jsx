@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontFamily: 'Helvetica Neueu, Helvetica, sans-serif',
     width: SIZES.width,
-    height: 700,
+    height: SIZES.height,
     alignSelf: 'center',
     flexDirection: 'row',
     
